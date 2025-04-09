@@ -1,0 +1,21 @@
+{
+    "version": 1,
+    "author": "Hùng Anh Nguyễn",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-pi-pico", "id": "pico", "top": -3.15, "left": -102, "attrs": {} },
+      { "type": "wokwi-relay-module", "id": "relay1", "top": 19.4, "left": 38.4, "attrs": {} },
+      { "type": "wokwi-led", "id": "led1", "top": 92.4, "left": 90.2, "attrs": { "color": "red" } }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "pico:3V3", "relay1:GND", "green", [ "h68.4" ] ],
+      [ "pico:GND.8", "relay1:VCC", "black", [ "h58.8", "v9.6" ] ],
+      [ "pico:GP28", "relay1:IN", "green", [ "h58.8", "v-9.6" ] ],
+      [ "pico:3V3", "relay1:COM", "green", [ "h30", "v-38.4", "h172.8", "v38.4" ] ],
+      [ "pico:GND.8", "led1:C", "black", [ "h39.6", "v115.2", "h96" ] ],
+      [ "relay1:NO", "led1:A", "green", [ "h20.4", "v84.6", "h-57.6" ] ]
+    ],
+    "dependencies": {}
+  }
